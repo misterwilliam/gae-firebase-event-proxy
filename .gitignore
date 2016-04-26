@@ -13,3 +13,8 @@ hs_err_pid*
 
 # Ignore maven output
 target/
+
+# Eclipse
+.settings/
+.project
+.classpath
