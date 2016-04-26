@@ -12,6 +12,8 @@ public class ServletContextListenerImpl implements ServletContextListener {
   @Override
   public void contextInitialized(ServletContextEvent event) {
     log.info("Starting ....");
+    FirebaseEventProxy proxy = new FirebaseEventProxy();
+    proxy.start();
   }
 
   @Override
