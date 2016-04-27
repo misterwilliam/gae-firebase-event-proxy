@@ -4,7 +4,8 @@
 ## Configuration
 
 Firebase Secret
-Put your Firebase secret in the file: GaeEventProxy/src/main/webapp/firebase-secret.properties
+Put your Firebase secret in the file:
+gae-firebase-event-proxy/src/main/webapp/firebase-secret.properties
 ```
 firebaseSecret=<Your Firebase secret>
 ```
