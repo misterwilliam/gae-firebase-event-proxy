@@ -1,4 +1,10 @@
-appengine-skeleton
-=============================
+# App Engine Firebase Event Proxy
 
-This is a generated application from the appengine-skeleton archetype.
+
+## Configuration
+
+Firebase Secret
+Put your Firebase secret in the file:src/main/webapp/firebase-secret.properties
+```
+firebaseSecret=<Your Firebase secret>
+```
