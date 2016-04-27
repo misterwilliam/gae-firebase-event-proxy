@@ -56,8 +56,9 @@ public class FirebaseEventProxy {
           try {
             // Convert value to JSON using Jackson
             String json = new ObjectMapper().writeValueAsString(snapshot.getValue());
-            URL dest = new URL("http://localhost:9000/api/log");
+            URL dest = new URL("http://localhost:9000/log");
             HttpURLConnection connection = (HttpURLConnection) dest.openConnection();
+            connection.setRequestMethod("POST");
             connection.setDoOutput(true);
             // Rely on X-Appengine-Inbound-Appid to authenticate. Turning off redirects is
             // required to enable.
