@@ -56,7 +56,8 @@ public class FirebaseEventProxy {
           try {
             // Convert value to JSON using Jackson
             String json = new ObjectMapper().writeValueAsString(snapshot.getValue());
-            URL dest = new URL("http://localhost:9000/log");
+            // Replace the URL with the url of your own listener app.
+            URL dest = new URL("http://gae-firebase-listener-python.appspot.com/log");
             HttpURLConnection connection = (HttpURLConnection) dest.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -74,6 +75,8 @@ public class FirebaseEventProxy {
             connection.getOutputStream().write(stringBuilder.toString().getBytes());
             if (connection.getResponseCode() != 200) {
               log.severe("Forwarding failed");
+            } else {
+              log.info("Sent: " + json);
             }
           } catch (JsonProcessingException e) {
             log.severe("Unable to convert Firebase response to JSON: " + e.getMessage());
