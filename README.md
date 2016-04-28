@@ -1,5 +1,13 @@
 # App Engine Firebase Event Proxy
 
+An example app that illustrates how to create a Java App Engine Standard Environment
+app that proxies Firebase events to another App Engine app.
+
+# Java Firebase Event Proxy
+Illustrates how to authenticate and subscribe to Firebase from Java App Engine.
+
+# Python App Engine Listener
+Illustrates how to authenticate messages received from the proxy app.
 
 ## Configuration
 
