@@ -5,6 +5,9 @@ IS_DEV = os.environ["SERVER_SOFTWARE"][:3] == "Dev"
 allowed_users = set()
 if IS_DEV:
     allowed_users.add("dev-instance")
+else:
+    # Add your Java App Engine proxy App Id here
+    allowed_users.add("your-java-appengine-proxy-app-id")
 
 class LoggingHandler(webapp2.RequestHandler):
 
