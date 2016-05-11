@@ -9,7 +9,7 @@ Illustrates how to authenticate and subscribe to Firebase from Java App Engine.
 # Python App Engine Listener
 Illustrates how to authenticate messages received from the proxy app.
 
-## Configuration
+## Setup
 
 ### Java Firebase Event Proxy
 Firebase Secret
@@ -22,7 +22,20 @@ firebaseSecret=<Your Firebase secret>
 * Billing must be enabled from Cloud console.
 * Manual scaling should turned on and configured to 1 instance in appengine-web.xml
 
-## Deploy
+## Running locally
+### Java Firebase Event Proxy
+```
+cd gae-firebase-event-proxy
+mvn appengine:devserver
+```
+
+### Python App Engine Listener
+```
+cd gae-firebase-listener-python
+dev_appserver .
+```
+
+## Deploying
 
 ### Java Firebase Event Proxy
 ```
