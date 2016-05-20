@@ -32,7 +32,7 @@ public class FirebaseEventProxy {
   }
 
   public void start() {
-    String FIREBASE_LOCATION = "https://gae-fb-proxy.firebaseio.com/";
+    String FIREBASE_LOCATION = "https://crackling-torch-392.firebaseio.com";
     Firebase firebase = new Firebase(FIREBASE_LOCATION);
     // Authenticate with Firebase
     firebase.authWithCustomToken(this.firebaseAuthToken, new Firebase.AuthResultHandler() {
