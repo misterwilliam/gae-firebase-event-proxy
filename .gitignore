@@ -1,5 +1,5 @@
 *.class
-firebase-secret.properties
+gae-firebase-secrets.json
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
