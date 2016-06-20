@@ -7,7 +7,7 @@ if IS_DEV:
     allowed_users.add("dev-instance")
 else:
     # Add your Java App Engine proxy App Id here
-    allowed_users.add("your-java-appengine-proxy-app-id")
+    allowed_users.add("gae-firebase-event-proxy")
 
 class LoggingHandler(webapp2.RequestHandler):
 

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -18,6 +19,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Logger.Level;
 import com.google.firebase.database.ValueEventListener;
 
 public class FirebaseEventProxy {
@@ -44,15 +46,20 @@ public class FirebaseEventProxy {
   }
 
   public void start() {
+    FirebaseDatabase.getInstance().setLogLevel(Level.DEBUG);
     DatabaseReference firebase = FirebaseDatabase.getInstance().getReference();
+    log.severe("Starting --------------------------");
 
     // Subscribe to value events. Depending on use case, you may want to subscribe to child events
     // through childEventListener.
-    firebase.addValueEventListener(new ValueEventListener() {
+    firebase.child("data").addValueEventListener(new ValueEventListener() {
       @Override
       public void onDataChange(DataSnapshot snapshot) {
         if (snapshot.exists()) {
           try {
+            DatabaseReference dataClone =
+                FirebaseDatabase.getInstance().getReference().child("clone");
+            dataClone.push().setValue(new Date().toString());
             // Convert value to JSON using Jackson
             String json = new ObjectMapper().writeValueAsString(snapshot.getValue(false));
             // Replace the URL with the url of your own listener app.

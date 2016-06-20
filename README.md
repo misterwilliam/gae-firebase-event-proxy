@@ -40,7 +40,7 @@ dev_appserver .
 ### Java Firebase Event Proxy
 ```
 cd gae-firebase-event-proxy
-mvn appengine:upload
+mvn appengine:update
 ```
 
 ### Python App Engine Listener
