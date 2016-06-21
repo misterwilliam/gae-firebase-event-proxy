@@ -2,6 +2,7 @@ package com.example.GaeFirebaseEventProxy;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -46,6 +47,10 @@ public class FirebaseEventProxy {
   }
 
   public void start() {
+    // Redirect stdout to CloudDataStoreStream
+    System.setOut(new PrintStream(new CloudDataStoreStream()));
+    System.setErr(new PrintStream(new CloudDataStoreStream()));
+
     FirebaseDatabase.getInstance().setLogLevel(Level.DEBUG);
     DatabaseReference firebase = FirebaseDatabase.getInstance().getReference();
     log.severe("Starting --------------------------");
