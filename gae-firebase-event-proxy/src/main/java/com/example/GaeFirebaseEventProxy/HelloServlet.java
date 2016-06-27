@@ -2,7 +2,6 @@ package com.example.GaeFirebaseEventProxy;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Map;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,11 +16,11 @@ public class HelloServlet extends HttpServlet {
     PrintWriter out = resp.getWriter();
     out.println("Status up");
 
-    Map<Thread, StackTraceElement[]> threads = Thread.getAllStackTraces();
-    for (Map.Entry<Thread, StackTraceElement[]> entry : threads.entrySet()) {
-      for (StackTraceElement element : entry.getValue()) {
-        out.println(element.toString());
-      }
-    }
+    // Map<Thread, StackTraceElement[]> threads = Thread.getAllStackTraces();
+    // for (Map.Entry<Thread, StackTraceElement[]> entry : threads.entrySet()) {
+    // for (StackTraceElement element : entry.getValue()) {
+    // out.println(element.toString());
+    // }
+    // }
   }
 }
