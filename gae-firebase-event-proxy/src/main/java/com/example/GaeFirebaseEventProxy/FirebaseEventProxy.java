@@ -35,13 +35,13 @@ public class FirebaseEventProxy {
     databaseAuthVariableOverride.put("provider", "com.example");
     try {
       FirebaseOptions options = new FirebaseOptions.Builder()
-          .setServiceAccount(new FileInputStream("gae-firebase-secrets.json"))
+          .setServiceAccount(new FileInputStream("WEB-INF/gae-firebase-secrets.json"))
           .setDatabaseUrl(FIREBASE_LOCATION)
           .setDatabaseAuthVariableOverride(databaseAuthVariableOverride).build();
       FirebaseApp.initializeApp(options);
     } catch (IOException e) {
       throw new RuntimeException(
-          "Error reading firebase secrets from file: src/main/webapp/gae-firebase-secrets.json: "
+          "Error reading firebase secrets from file: src/main/webapp/WEB-INF/gae-firebase-secrets.json: "
               + e.getMessage());
     }
   }

@@ -14,7 +14,7 @@ Illustrates how to authenticate messages received from the proxy app.
 ### Java Firebase Event Proxy
 Firebase Secret
 Put your Firebase secret in the file:
-gae-firebase-event-proxy/src/main/webapp/firebase-secret.properties
+gae-firebase-event-proxy/src/main/webapp/WEB-INF/firebase-secret.properties
 ```
 firebaseSecret=<Your Firebase secret>
 ```

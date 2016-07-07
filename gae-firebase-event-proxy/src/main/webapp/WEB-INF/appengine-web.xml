@@ -12,7 +12,4 @@
         <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
     </system-properties>
 
-    <resource-files>
-      <include path="/**/gae-firebase-secrets.json" />
-    </resource-files>
 </appengine-web-app>
